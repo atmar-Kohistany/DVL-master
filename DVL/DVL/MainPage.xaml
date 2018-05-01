@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DVL"
+             x:Class="DVL.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel/>
+    </ContentPage.BindingContext>
+    <!--<ListView ItemsSource="{Binding Products}"-->
+    <ListView ItemsSource="{Binding Products}"
+              HasUnevenRows="True"
+              Margin="40,80"
+              ItemTapped="ListView_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding name}"/>
+                        <Label Text="{Binding lastName}"/>
+                        <Label Text="{Binding Id}"/>
+                        <!--<Entry x:Name="ID" Text="1"></Entry>-->
+                        
+                        <!--<Button Text="Details" 
+                                
+                                IsVisible="{Binding IsVisible }" BackgroundColor="red" Clicked="Button_OnClicked"/>-->
+                        <Button x:Name="btnAprovar" 
+                                HorizontalOptions="End"
+                                BackgroundColor="Gold"
+                                HeightRequest="35" 
+                                WidthRequest="80"
+                                Text="Aprovar" 
+                                Clicked="BtnAprovar_OnClicked"
+                                TextColor="Green"
+                                
+                               
+                                FontSize="Small" />
+                        
+
+                        <Button x:Name="btnNegar" 
+                                HorizontalOptions="End"
+                                BackgroundColor="Gold"
+                                HeightRequest="35" 
+                                WidthRequest="80"
+                                Text="Negar" 
+                                TextColor="Green"
+                                Clicked="BtnNegar_OnClicked"
+                                FontSize="Small" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>
